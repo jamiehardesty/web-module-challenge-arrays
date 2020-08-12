@@ -43,9 +43,9 @@ i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
 function is31Flavors(){
     for(i = 0; i <= originalFlavors.length; i++) {
-        console.log("Boolean requisite: " + Boolean(originalFlavors.length === 31));
-        console.log("index returns: " + i);
-        console.log("originalFlavors: " + originalFlavors['length'])
+        console.log("T1 - boolean requisite: " + Boolean(originalFlavors.length === 31));
+        console.log("T1 - index returns: " + i);
+        console.log("T1 - originalFlavors: " + originalFlavors['length'])
     }
 }
 is31Flavors();
@@ -61,12 +61,13 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
 
-function addFlavor(/*code here*/){
-
-    /*code here*/
-
+// array: originalFlavors
+function addFlavor(newFlavor){
+    newFlavor = "Rainbow Sherbet";
+    originalFlavors.unshift(addFlavor);
+    console.log(originalFlavors);
 }
-
+addFlavor();
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
