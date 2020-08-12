@@ -62,14 +62,24 @@ Your function should add the flavor to the front of the array and console.log th
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
 
 // array: originalFlavors
-function addFlavor(newFlavor){
+// function addFlavor(newFlavor){
+//     newFlavor = "Rainbow Sherbet";
+//     originalFlavors.unshift(addFlavor);
+//     console.log("T2 results below")
+//     console.log(originalFlavors);
+//     console.log("T2 results above")
+// }
+// addFlavor();
+//
+//  I think below is the proper syntax rather than above, though, they both do the same thing. 
+function addFlavor2(newFlavor, arr){
     newFlavor = "Rainbow Sherbet";
-    originalFlavors.unshift(addFlavor);
+    originalFlavors.unshift(addFlavor2);
     console.log("T2 results below")
-    console.log(originalFlavors);
+    console.log(arr);
     console.log("T2 results above")
 }
-addFlavor();
+addFlavor2("Rainbow Sherbert", originalFlavors);
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -82,13 +92,14 @@ Your function should remove a flavor from the end of the array and console.log t
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
 
 // array: originalFlavors
-function removeLastFlavor(){
-    originalFlavors.pop();
+// updated some things to match the prompt
+function removeLastFlavor(arr){
+    arr.pop();
     console.log("T3 results below")
-    console.log(originalFlavors);
+    console.log(arr);
     console.log("T3 results above")
 }
-removeLastFlavor();
+removeLastFlavor(originalFlavors);
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -104,6 +115,7 @@ function getFlavorByIndex(/*code here*/){
     /*code here*/
 
 }
+getFlavorByIndex();
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
