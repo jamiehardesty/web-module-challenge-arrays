@@ -1,7 +1,7 @@
 var originalFlavors = ["Banana Nut Fudge",
     "Black Walnut",
     "Burgundy Cherry",
-   "Butterscotch Ribbon",
+    "Butterscotch Ribbon",
     "Cherry Macaron",
     "Chocolate",
     "Chocolate Almond",
@@ -40,11 +40,15 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(/*code here*/){
 
-    /*code here*/
-
+function is31Flavors(){
+    for(i = 0; i <= originalFlavors.length; i++) {
+        console.log("Boolean requisite: " + Boolean(originalFlavors.length === 31));
+        console.log("index returns: " + i);
+        console.log("originalFlavors: " + originalFlavors['length'])
+    }
 }
+is31Flavors();
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -143,12 +147,6 @@ For example, filterByWord(originalFlavors, "Chocolate") should return ["Chocolat
 DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
-
-function filterByWord(/*code here*/){
-
-    /*code here*/
-
-}
 
 
 
