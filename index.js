@@ -41,14 +41,20 @@ To save you from having to count the items above, you can assume that length of 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
 
-function is31Flavors(){
-    for(i = 0; i <= originalFlavors.length; i++) {
-        console.log("T1 - boolean requisite: " + Boolean(originalFlavors.length === 31));
-        console.log("T1 - index returns: " + i);
-        console.log("T1 - originalFlavors: " + originalFlavors['length'])
+function is31Flavors(arr){
+    // for(i = 0; i <= originalFlavors.length; i++) { // removes [32]
+        if(arr.length === 31){
+            console.log("true");
+        }
+        else{
+            console.log("false");
+        }
+        // console.log("T1 - boolean requisite: " + Boolean(originalFlavors.length === 31));
+        // console.log("T1 - index returns: " + i);
+        // console.log("T1 - originalFlavors: " + originalFlavors['length'])
     }
-}
-is31Flavors();
+// }  // removes [32]
+is31Flavors(originalFlavors);
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -73,13 +79,14 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 //
 //  I think below is the proper syntax rather than above, though, they both do the same thing. 
 function addFlavor2(newFlavor, arr){
-    newFlavor = "Rainbow Sherbet";
-    originalFlavors.unshift(addFlavor2);
+    // newFlavor = "Rainbow Sherbet"; don't do this lol
+    arr.unshift(newFlavor);
     console.log("T2 results below")
     console.log(arr);
     console.log("T2 results above")
 }
 addFlavor2("Rainbow Sherbert", originalFlavors);
+//comment out console logs 
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -126,15 +133,18 @@ Your function should accept:
 For example, removeFlavorByName(originalFlavors, "Vanilla") would return an array with the length 30 including all of the flavors except Vanilla. 
 
 Hint: You can use .splice() for this
-
 */
 
-function removeFlavorByName(/*code here*/){
-
-    /*code here*/
-
-}
-
+function removeFlavorByName(arr, string){
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i].includes(string)){
+        arr.splice(i, 1);
+        console.log("T5 - " + arr);
+      }
+    } // 
+  }
+  removeFlavorByName(originalFlavors, "Vanilla");
+//   removeFlavorByName(originalFlavors, "Coffee Candy");
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -144,11 +154,10 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(/*code here*/){
-
-    /*code here*/
+function copy(arr, arrOG){
 
 }
+copy(originalFlavors, OGflavors);
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
