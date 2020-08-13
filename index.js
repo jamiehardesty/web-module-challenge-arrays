@@ -190,11 +190,16 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 hint - you can use the .includes method to help you solve this */
 
 function filterByWord(arr, string){
-    i
+    newArr = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].includes(string)){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
 }
-
-filterByWord(originalFlavors, "Chocolate");
-
+console.log(filterByWord(originalFlavors, 'Chocolate'));
+console.log(filterByWord(originalFlavors, 'Sherbert'));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
